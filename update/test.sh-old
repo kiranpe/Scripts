@@ -1,0 +1,8 @@
+count=`cat abc.cfg | wc -l`
+
+if [ $count = 2 ];then
+line1=`cat abc.cfg | awk -F"," '{print $1}' | sed -z 's/\n/,/g;s/,*$//g'`
+line2=`cat abc.cfg | awk -F"," '{print $2}' | sed -z 's/\n/,/g;s/,*$//g'`
+
+sed -e "s/\"address\" : .*/\"address\" : $line1,$line2/g" xz.yaml 
+fi
