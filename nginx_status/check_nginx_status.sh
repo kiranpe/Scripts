@@ -11,5 +11,5 @@ else
     if [ -z "$new_status" ];then
       echo "Nginx is still Down.. Check configuration once.." | mailx -s "Nginx status on `hostname`" kiranpeddineni@gmail.com
     else
-      echo "Nginx is Up and Running Now.." > /dev/null 2>&1
+      echo "Nginx is Up and Running Now on `hostname`" |  mailx -s "Nginx status on `hostname`" kiranpeddineni@gmail.com
 fi fi
