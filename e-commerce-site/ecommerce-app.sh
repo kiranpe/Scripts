@@ -131,7 +131,7 @@ if [[ $mysql_db_results == *Laptop* ]]
 then
   print_color "green" "Inventory data loaded into MySQl"
 else
-  print_color "green" "Inventory data not loaded into MySQl"
+  print_color "red" "Inventory data not loaded into MySQl"
   exit 1
 fi
 
